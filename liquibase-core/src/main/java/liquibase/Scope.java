@@ -242,6 +242,7 @@ public class Scope {
         for (MdcObject mdcObject : CollectionUtil.createIfNull(mdcObjects)) {
             mdcObject.close();
         }
+        addedMdcEntries.remove(currentScope.scopeId);
 
         scopeManager.setCurrentScope(currentScope.getParent());
     }
